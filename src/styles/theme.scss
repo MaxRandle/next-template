@@ -3,6 +3,10 @@
 /* ========================================================================= */
 
 :root {
+  /* ========================================================================= */
+  /* color spectrum */
+  /* ========================================================================= */
+
   --base-050: oklch(97% 0 0);
   --base-100: oklch(90% 0 0);
   --base-200: oklch(80% 0 0);
@@ -14,16 +18,32 @@
   --base-800: oklch(20% 0 0);
   --base-900: oklch(10% 0 0);
 
-  --accent-050: oklch(97% 25 280);
-  --accent-100: oklch(90% 25 280);
-  --accent-200: oklch(80% 25 280);
-  --accent-300: oklch(70% 25 280);
-  --accent-400: oklch(60% 25 280);
-  --accent-500: oklch(50% 25 280);
-  --accent-600: oklch(40% 25 280);
-  --accent-700: oklch(30% 25 280);
-  --accent-800: oklch(20% 25 280);
-  --accent-900: oklch(10% 25 280);
+  --primary-050: oklch(97% 25 280);
+  --primary-100: oklch(90% 25 280);
+  --primary-200: oklch(80% 25 280);
+  --primary-300: oklch(70% 25 280);
+  --primary-400: oklch(60% 25 280);
+  --primary-500: oklch(50% 25 280);
+  --primary-600: oklch(40% 25 280);
+  --primary-700: oklch(30% 25 280);
+  --primary-800: oklch(20% 25 280);
+  --primary-900: oklch(10% 25 280);
+
+  /* ========================================================================= */
+  /* text form */
+  /* ========================================================================= */
+
+  --font-size--xs: 0.75rem; /*     12px ( -4px) */
+  --font-size--sm: 0.875rem; /*    14px ( -2px) */
+  --font-size--md: 1rem; /*        16px ( +0px) */
+  --font-size--lg: 1.125rem; /*    18px ( +2px) */
+  --font-size--xl: 1.25rem; /*     20px ( +4px) */
+  --font-size--2xl: 1.5rem; /*     24px ( +8px) */
+  --font-size--3xl: 1.75rem; /*    28px (+12px) */
+  --font-size--4xl: 2.125rem; /*   34px (+18px) */
+  --font-size--5xl: 2.5rem; /*     40px (+24px) */
+  --font-size--6xl: 3rem; /*       48px (+32px) */
+  --font-size--7xl: 3.5rem; /*     56px (+40px) */
 
   --surface-bg--base: var(--base-050);
   --surface-bg--raised: var(--base-100);
@@ -39,18 +59,11 @@
 
   --text-color--base: var(--base-900);
   --text-color--weak: var(--base-600);
-  --text-color--danger: var(--danger-700);
-  --text-color--disabled: var(--base-300);
-  --text-color--primary: var(--primary-600);
-
   --text-color--on-primary: var(--base-050);
 
   @media (prefers-color-scheme: dark) {
     --text-color--base: var(--base-050);
     --text-color--weak: var(--base-300);
-    --text-color--danger: var(--danger-500);
-    --text-color--disabled: var(--base-600);
-    --text-color--primary: var(--primary-300);
   }
 }
 

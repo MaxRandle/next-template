@@ -1,0 +1,22 @@
+.heading {
+  color: inherit;
+
+  // size
+  &--base {
+    color: var(--text-color--base);
+  }
+  &--weak {
+    color: var(--text-color--weak);
+  }
+
+  // color
+  &--1 {
+    font-size: 4.5rem;
+  }
+  &--2 {
+    font-size: 3.5rem;
+  }
+  &--3 {
+    font-size: 2.75rem;
+  }
+}
