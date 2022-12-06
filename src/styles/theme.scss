@@ -16,6 +16,12 @@
   /* media query mixins */
   /* ========================================================================= */
 
+  @mixin dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+
   @mixin media-sm {
     @media (min-width: $media--sm) {
       @content;
@@ -44,27 +50,71 @@
   /* color spectrum */
   /* ========================================================================= */
 
-  --base-050: lch(97% 2 280);
-  --base-100: lch(90% 4 280);
-  --base-200: lch(80% 6 280);
+  --base-50: lch(97% 2 280);
+  --base-100: lch(93% 4 280);
+  --base-200: lch(83% 6 280);
   --base-300: lch(70% 7 280);
   --base-400: lch(60% 8 280);
-  --base-500: lch(50% 9 280);
-  --base-600: lch(40% 10 280);
-  --base-700: lch(30% 10.5 280);
-  --base-800: lch(20% 11 280);
+  --base-500: lch(48% 9 280);
+  --base-600: lch(35% 10 280);
+  --base-700: lch(25% 10.5 280);
+  --base-800: lch(16% 11 280);
   --base-900: lch(10% 11.5 280);
 
-  --primary-050: lch(97% 6 170);
-  --primary-100: lch(90% 10 170);
-  --primary-200: lch(80% 14 170);
-  --primary-300: lch(70% 18 170);
-  --primary-400: lch(60% 20 170);
-  --primary-500: lch(50% 22 170);
-  --primary-600: lch(40% 24 170);
-  --primary-700: lch(30% 25 170);
-  --primary-800: lch(20% 26 170);
-  --primary-900: lch(10% 27 170);
+  --primary-50: lch(97% 8 200);
+  --primary-100: lch(93% 12 198);
+  --primary-200: lch(83% 16 196);
+  --primary-300: lch(70% 20 194);
+  --primary-400: lch(60% 24 192);
+  --primary-500: lch(48% 28 190);
+  --primary-600: lch(35% 32 188);
+  --primary-700: lch(25% 30 186);
+  --primary-800: lch(16% 28 184);
+  --primary-900: lch(10% 26 182);
+
+  --success-50: lch(97% 12 145);
+  --success-100: lch(93% 20 145);
+  --success-200: lch(83% 28 145);
+  --success-300: lch(70% 36 145);
+  --success-400: lch(60% 40 145);
+  --success-500: lch(48% 44 145);
+  --success-600: lch(35% 48 145);
+  --success-700: lch(25% 50 145);
+  --success-800: lch(16% 52 145);
+  --success-900: lch(10% 54 145);
+
+  --info-50: lch(97% 9 230);
+  --info-100: lch(93% 15 230);
+  --info-200: lch(83% 25 230);
+  --info-300: lch(70% 30 230);
+  --info-400: lch(60% 36 230);
+  --info-500: lch(48% 44 230);
+  --info-600: lch(35% 48 230);
+  --info-700: lch(25% 50 230);
+  --info-800: lch(16% 52 230);
+  --info-900: lch(12% 54 230);
+
+  --warning-50: lch(97% 12 80);
+  --warning-100: lch(93% 20 78);
+  --warning-200: lch(83% 30 76);
+  --warning-300: lch(70% 40 74);
+  --warning-400: lch(60% 50 72);
+  --warning-500: lch(48% 70 70);
+  --warning-600: lch(35% 90 68);
+  --warning-700: lch(25% 70 62);
+  --warning-800: lch(18% 50 58);
+  --warning-900: lch(10% 30 54);
+
+  --danger-50: lch(97% 15 36);
+  --danger-100: lch(93% 25 36);
+  --danger-200: lch(83% 45 36);
+  --danger-300: lch(70% 70 36);
+  --danger-400: lch(60% 80 36);
+  --danger-500: lch(48% 80 36);
+  --danger-600: lch(35% 60 36);
+  --danger-700: lch(25% 45 36);
+  --danger-800: lch(16% 25 36);
+  --danger-900: lch(8% 15 36);
 
   /* ========================================================================= */
   /* text form */
@@ -84,6 +134,7 @@
 
   --typography-size--caption: var(--font-size--xs);
   --typography-size--body: var(--font-size--md);
+
   @include media-md {
     --typography-size--caption: var(--font-size--sm);
     --typography-size--body: var(--font-size--lg);
@@ -92,6 +143,7 @@
   --heading-size--h3: var(--font-size--2xl);
   --heading-size--h2: var(--font-size--4xl);
   --heading-size--h1: var(--font-size--6xl);
+
   @include media-md {
     --heading-size--h3: var(--font-size--3xl);
     --heading-size--h2: var(--font-size--5xl);
@@ -100,6 +152,7 @@
 
   --typography-weight--caption: 600;
   --typography-weight--body: 500;
+
   @include media-md {
     --typography-weight--caption: 500;
     --typography-weight--body: 400;
@@ -108,6 +161,7 @@
   --heading-weight--h3: 700;
   --heading-weight--h2: 600;
   --heading-weight--h1: 500;
+
   @include media-md {
     --heading-weight--h3: 600;
     --heading-weight--h2: 500;
@@ -125,8 +179,9 @@
   --text-color--base: var(--base-900);
   --text-color--weak: var(--base-600);
   --text-color--primary: var(--primary-600);
-  @media (prefers-color-scheme: dark) {
-    --text-color--base: var(--base-050);
+
+  @include dark {
+    --text-color--base: var(--base-50);
     --text-color--weak: var(--base-300);
     --text-color--primary: var(--primary-300);
   }
@@ -135,22 +190,51 @@
   /* surface background */
   /* ========================================================================= */
 
-  --surface-bg--base: var(--base-050);
+  --surface-bg--base: var(--base-50);
   --surface-bg--raised: var(--base-100);
   --surface-bg--hover: var(--base-200);
   --surface-bg--primary: var(--primary-100);
-  @media (prefers-color-scheme: dark) {
+
+  --surface-bg--success: var(--success-50);
+  --surface-bg--info: var(--info-50);
+  --surface-bg--warning: var(--warning-50);
+  --surface-bg--danger: var(--danger-50);
+
+  @include dark {
     --surface-bg--base: var(--base-900);
     --surface-bg--raised: var(--base-800);
     --surface-bg--hover: var(--base-700);
     --surface-bg--primary: var(--primary-800);
+
+    --surface-bg--success: var(--success-900);
+    --surface-bg--info: var(--info-900);
+    --surface-bg--warning: var(--warning-900);
+    --surface-bg--danger: var(--danger-900);
+  }
+
+  /* ========================================================================= */
+  /* border color */
+  /* ========================================================================= */
+
+  --border-color--base: var(--base-400);
+  --border-color--danger: var(--danger-400);
+  --border-color--warning: var(--warning-400);
+  --border-color--info: var(--info-400);
+  --border-color--success: var(--success-400);
+
+  @include dark {
+    --border-color--base: var(--base-400);
+    --border-color--danger: var(--danger-400);
+    --border-color--warning: var(--warning-400);
+    --border-color--info: var(--info-400);
+    --border-color--success: var(--success-400);
   }
 }
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
   color: var(--text-color--base);
   background: var(--surface-bg--base);

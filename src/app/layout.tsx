@@ -8,7 +8,9 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className="pt-10">{children}</body>
+      <body>
+        <div className="pt-10 pb-20 flex flex-col">{children}</div>
+      </body>
     </html>
   );
 }
