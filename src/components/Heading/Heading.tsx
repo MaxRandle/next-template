@@ -14,7 +14,7 @@ type HeadingProps = React.ComponentPropsWithoutRef<"h1"> & {
   /**
    * @summary specifies the font-color, defaults to 'inherit'
    */
-  color?: "base" | "weak";
+  color?: "base" | "weak" | "primary";
 };
 
 export const Heading: React.FC<HeadingProps> = ({
@@ -24,7 +24,7 @@ export const Heading: React.FC<HeadingProps> = ({
   className,
   ...props
 }: HeadingProps) => {
-  const Component = as ?? "h1";
+  const Component = as ?? level === 1 ? "h1" : level === 2 ? "h2" : "h3";
 
   const classNames = cn(className, styles.heading, {
     [styles[`heading--${color}`] ?? ""]: color,

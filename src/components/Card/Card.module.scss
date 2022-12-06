@@ -1,0 +1,14 @@
+.card {
+  border-radius: 16px;
+  padding: 24px;
+
+  &--base {
+    background-color: var(--surface-bg--base);
+  }
+  &--raised {
+    background-color: var(--surface-bg--raised);
+  }
+  &--primary {
+    background-color: var(--surface-bg--primary);
+  }
+}
